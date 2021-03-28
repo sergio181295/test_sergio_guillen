@@ -15,14 +15,14 @@ import com.guillen.entity.Result;
 import com.guillen.entity.utils.Utils;
 
 @Service
-public class AppleImpl implements AppleCtrl{
-	
+public class AppleImpl implements AppleCtrl {
+
 	private final RestTemplate restTemplate;
 
 	public AppleImpl(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 	}
-	
+
 	public List<Result> search(String term, String kind, List<Result> resultList) throws IOException {
 		String url = "https://itunes.apple.com/search?term=%s&media=%s";
 
@@ -65,7 +65,7 @@ public class AppleImpl implements AppleCtrl{
 		return resultList;
 	}
 
-	private Result buildAppleResult(Map<String, Object> map, String kind){
+	private Result buildAppleResult(Map<String, Object> map, String kind) {
 		Result result = new Result();
 		result.setDescription(Utils.getStringFromMap(map, "shortDescription"));
 		List<String> genderList = new ArrayList<>();
@@ -77,8 +77,8 @@ public class AppleImpl implements AppleCtrl{
 		result.setUrl(Utils.getStringFromMap(map, "trackViewUrl"));
 		result.setOrigin("apple");
 		result.setKind(kind);
-		
+
 		return result;
 	}
-	
+
 }

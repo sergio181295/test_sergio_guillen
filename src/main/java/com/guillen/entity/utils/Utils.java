@@ -25,7 +25,7 @@ public class Utils {
 	}
 
 	public static List<?> getListoFromMap(Map<String, Object> map, String key) {
-		Object value = map.get(key); 
+		Object value = map.get(key);
 		List<?> list = new ArrayList<>();
 		if (value.getClass().isArray()) {
 			list = Arrays.asList((Object[]) value);

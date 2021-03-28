@@ -5,7 +5,7 @@ import java.util.List;
 public class SearchResponse {
 
 	Integer count;
-	
+
 	List<Result> resultList;
 
 	public Integer getCount() {

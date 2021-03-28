@@ -35,17 +35,17 @@ import javax.xml.bind.annotation.XmlType;
 public class GetListByNameResponse {
 
     @XmlElement(name = "GetListByNameResult", required = true)
-    protected ArrayOfPersonIdentificationPersonIdentification getListByNameResult;
+    protected PersonIdentificationList getListByNameResult;
 
     /**
      * Gets the value of the getListByNameResult property.
      * 
      * @return
      *     possible object is
-     *     {@link ArrayOfPersonIdentificationPersonIdentification }
+     *     {@link PersonIdentificationList }
      *     
      */
-    public ArrayOfPersonIdentificationPersonIdentification getGetListByNameResult() {
+    public PersonIdentificationList getGetListByNameResult() {
         return getListByNameResult;
     }
 
@@ -54,10 +54,10 @@ public class GetListByNameResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfPersonIdentificationPersonIdentification }
+     *     {@link PersonIdentificationList }
      *     
      */
-    public void setGetListByNameResult(ArrayOfPersonIdentificationPersonIdentification value) {
+    public void setGetListByNameResult(PersonIdentificationList value) {
         this.getListByNameResult = value;
     }
 

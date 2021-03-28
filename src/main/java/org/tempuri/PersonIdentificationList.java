@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ArrayOfPersonIdentificationPersonIdentification", propOrder = {
     "personIdentification"
 })
-public class ArrayOfPersonIdentificationPersonIdentification {
+public class PersonIdentificationList {
 
     @XmlElement(name = "PersonIdentification", nillable = true)
     protected List<PersonIdentification> personIdentification;

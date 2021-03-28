@@ -3,23 +3,23 @@ package com.guillen.entity;
 import java.util.List;
 
 public class Result {
-	
+
 	String name;
-	
+
 	String artistName;
-	
+
 	String kind;
-	
+
 	String origin;
-	
+
 	Double price;
-	
+
 	String description;
-	
+
 	List<String> genders;
-	
+
 	String url;
-	
+
 	Double score;
 
 	public String getName() {
@@ -30,7 +30,6 @@ public class Result {
 		this.name = name;
 	}
 
-	
 	public String getArtistName() {
 		return artistName;
 	}
@@ -94,5 +93,5 @@ public class Result {
 	public void setScore(Double score) {
 		this.score = score;
 	}
-	
+
 }

@@ -18,59 +18,9 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "SOAPDemoSoap", targetNamespace = "http://tempuri.org")
 @XmlSeeAlso({
-    org.tempuri.bynamedataset.ObjectFactory.class,
     org.tempuri.ObjectFactory.class
 })
 public interface SOAPDemoSoap {
-
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @return
-     *     returns long
-     */
-    @WebMethod(operationName = "AddInteger", action = "http://tempuri.org/SOAP.Demo.AddInteger")
-    @WebResult(name = "AddIntegerResult", targetNamespace = "http://tempuri.org")
-    @RequestWrapper(localName = "AddInteger", targetNamespace = "http://tempuri.org", className = "org.tempuri.AddInteger")
-    @ResponseWrapper(localName = "AddIntegerResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.AddIntegerResponse")
-    public long addInteger(
-        @WebParam(name = "Arg1", targetNamespace = "http://tempuri.org")
-        Long arg1,
-        @WebParam(name = "Arg2", targetNamespace = "http://tempuri.org")
-        Long arg2);
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @return
-     *     returns long
-     */
-    @WebMethod(operationName = "DivideInteger", action = "http://tempuri.org/SOAP.Demo.DivideInteger")
-    @WebResult(name = "DivideIntegerResult", targetNamespace = "http://tempuri.org")
-    @RequestWrapper(localName = "DivideInteger", targetNamespace = "http://tempuri.org", className = "org.tempuri.DivideInteger")
-    @ResponseWrapper(localName = "DivideIntegerResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.DivideIntegerResponse")
-    public long divideInteger(
-        @WebParam(name = "Arg1", targetNamespace = "http://tempuri.org")
-        Long arg1,
-        @WebParam(name = "Arg2", targetNamespace = "http://tempuri.org")
-        Long arg2);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns org.tempuri.Person
-     */
-    @WebMethod(operationName = "FindPerson", action = "http://tempuri.org/SOAP.Demo.FindPerson")
-    @WebResult(name = "FindPersonResult", targetNamespace = "http://tempuri.org")
-    @RequestWrapper(localName = "FindPerson", targetNamespace = "http://tempuri.org", className = "org.tempuri.FindPerson")
-    @ResponseWrapper(localName = "FindPersonResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.FindPersonResponse")
-    public Person findPerson(
-        @WebParam(name = "id", targetNamespace = "http://tempuri.org")
-        String id);
 
     /**
      * 
@@ -82,33 +32,8 @@ public interface SOAPDemoSoap {
     @WebResult(name = "GetListByNameResult", targetNamespace = "http://tempuri.org")
     @RequestWrapper(localName = "GetListByName", targetNamespace = "http://tempuri.org", className = "org.tempuri.GetListByName")
     @ResponseWrapper(localName = "GetListByNameResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.GetListByNameResponse")
-    public ArrayOfPersonIdentificationPersonIdentification getListByName(
+    public PersonIdentificationList getListByName(
         @WebParam(name = "name", targetNamespace = "http://tempuri.org")
         String name);
-
-    /**
-     * 
-     * @param zip
-     * @return
-     *     returns org.tempuri.Address
-     */
-    @WebMethod(operationName = "LookupCity", action = "http://tempuri.org/SOAP.Demo.LookupCity")
-    @WebResult(name = "LookupCityResult", targetNamespace = "http://tempuri.org")
-    @RequestWrapper(localName = "LookupCity", targetNamespace = "http://tempuri.org", className = "org.tempuri.LookupCity")
-    @ResponseWrapper(localName = "LookupCityResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.LookupCityResponse")
-    public Address lookupCity(
-        @WebParam(name = "zip", targetNamespace = "http://tempuri.org")
-        String zip);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "Mission", action = "http://tempuri.org/SOAP.Demo.Mission")
-    @WebResult(name = "MissionResult", targetNamespace = "http://tempuri.org")
-    @RequestWrapper(localName = "Mission", targetNamespace = "http://tempuri.org", className = "org.tempuri.Mission")
-    @ResponseWrapper(localName = "MissionResponse", targetNamespace = "http://tempuri.org", className = "org.tempuri.MissionResponse")
-    public String mission();
 
 }
