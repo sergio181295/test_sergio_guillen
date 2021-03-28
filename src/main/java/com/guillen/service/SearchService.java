@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.tempuri.ArrayOfPersonIdentificationPersonIdentification;
+import org.tempuri.SOAPDemo;
+import org.tempuri.SOAPDemoSoap;
 
 import com.guillen.api.AppleCtrl;
 import com.guillen.api.TvMazeCtrl;
@@ -46,7 +49,11 @@ public class SearchService {
 			case "show":
 				tvmazeCtrl.search(term, resultList);
 				break;
-
+			case "person":
+				SOAPDemoSoap demo = new SOAPDemo().getSOAPDemoSoap();
+				ArrayOfPersonIdentificationPersonIdentification result = demo.getListByName("John");
+				resultList.add(new Result());
+				break;
 			default:
 				appleCtrl.search(term, kind, resultList);
 				tvmazeCtrl.search(term, resultList);
