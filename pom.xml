@@ -67,7 +67,8 @@
 				<configuration>
 					<xdebug>true</xdebug>
 					<sourceDestDir>src/main/java</sourceDestDir>
-					<wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
+					<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
+					<wsdlLocation>/wsdl/persons.wsdl</wsdlLocation>
 					<vmArgs>
 						<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
 					</vmArgs>

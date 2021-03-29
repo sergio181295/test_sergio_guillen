@@ -19,13 +19,15 @@ public class CrcindImpl implements CrcindCtrl {
 		SOAPDemoSoap soapService = new SOAPDemo().getSOAPDemoSoap();
 		PersonIdentificationList list = soapService.getListByName(term);
 
-		for (PersonIdentification det : list.getPersonIdentification()) {
-			Result result = new Result();
-			result.setName(det.getName());
-			result.setOrigin("crcind");
-			result.setKind("person");
+		if (list != null) {
+			for (PersonIdentification det : list.getPersonIdentification()) {
+				Result result = new Result();
+				result.setName(det.getName());
+				result.setOrigin("crcind");
+				result.setKind("person");
 
-			resultList.add(result);
+				resultList.add(result);
+			}
 		}
 
 		return resultList;

@@ -1,7 +1,6 @@
 
 package org.tempuri;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -17,7 +16,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SOAPDemo", targetNamespace = "http://tempuri.org", wsdlLocation = "file:/C:/Users/sguillen/Documents/workspaceSpring/test_sergio_guillen/src/main/resources/wsdl/persons.wsdl")
+@WebServiceClient(name = "SOAPDemo", targetNamespace = "http://tempuri.org", wsdlLocation = "/wsdl/persons.wsdl")
 public class SOAPDemo
     extends Service
 {
@@ -27,14 +26,11 @@ public class SOAPDemo
     private final static QName SOAPDEMO_QNAME = new QName("http://tempuri.org", "SOAPDemo");
 
     static {
-        URL url = null;
+        SOAPDEMO_WSDL_LOCATION = org.tempuri.SOAPDemo.class.getResource("/wsdl/persons.wsdl");
         WebServiceException e = null;
-        try {
-            url = new URL("file:/C:/Users/sguillen/Documents/workspaceSpring/test_sergio_guillen/src/main/resources/wsdl/persons.wsdl");
-        } catch (MalformedURLException ex) {
-            e = new WebServiceException(ex);
+        if (SOAPDEMO_WSDL_LOCATION == null) {
+            e = new WebServiceException("Cannot find '/wsdl/persons.wsdl' wsdl. Place the resource correctly in the classpath.");
         }
-        SOAPDEMO_WSDL_LOCATION = url;
         SOAPDEMO_EXCEPTION = e;
     }
 
